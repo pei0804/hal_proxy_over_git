@@ -1,3 +1,6 @@
+# License: MIT
+# (c) 2016 jumpei"pei"chikamori http://ganbaruman.xyz/photofolio
+
 #!/bin/bash
 # 初期設定
 git config --global --unset http.proxy
@@ -10,7 +13,7 @@ unset ftp_proxy
 unset all_proxy
 
 # HAL
-if ping -c 1 proxy03.osaka.hal.ac.jp >/dev/null 2>&1
+if ping -c 3 proxy03.osaka.hal.ac.jp >/dev/null 2>&1
 then
     proxy_hal=http://学籍番号:認証PW@proxy03.osaka.hal.ac.jp:8080
     git config --global http.proxy $proxy_hal
