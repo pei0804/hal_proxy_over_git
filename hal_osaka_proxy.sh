@@ -12,6 +12,10 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 git config --global --unset url."https://".insteadOf
 
+# npmの初期化
+npm -g config delete proxy
+npm -g config delete https-proxy
+
 unset http_proxy
 unset https_proxy
 unset ftp_proxy
@@ -24,6 +28,10 @@ then
     git config --global http.proxy $proxy_hal
     git config --global https.proxy $proxy_hal
     git config --global url."https://".insteadOf git://
+
+    # 
+    npm -g config set proxy $proxy_hal
+    npm -g config set https-proxy $proxy_hal
 
     export http_proxy=$proxy_hal
     export https_proxy=$proxy_hal
