@@ -11,6 +11,8 @@ password=認証PW
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 git config --global --unset url."https://".insteadOf
+sed -i '' -e '/http/d' ~/.gitconfig
+sed -i '' -e '/https/d' ~/.gitconfig
 
 # npm
 npm -g config delete proxy
